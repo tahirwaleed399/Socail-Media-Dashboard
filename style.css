@@ -1,0 +1,326 @@
+:root {
+    --LimeGreen: hsl(163, 72%, 41%);
+    --BrightRed: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --YouTube: hsl(348, 97%, 39%);
+    --togglegradient: linear-gradient( hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --Toggle: hsl(230, 22%, 74%);
+    /* light coors  */
+    /* --backgroud: hsl(0, 0%, 100%); */
+    --cardBG: hsl(227, 47%, 96%);
+    --text: hsl(228, 12%, 44%);
+    --boldText: hsl(230, 17%, 14%);
+    --hover: #cdced5;
+    --gray: #84899f;
+    --top: hsl(225, 100%, 98%);
+}
+
+hr {
+    display: none;
+}
+
+html[data-theme="dark"] {
+    --top: hsl(232, 19%, 15%);
+    --cardBG: hsl(228, 28%, 20%);
+    --text: hsl(228, 34%, 66%);
+    --boldText: hsl(0, 0%, 100%);
+    --hover: #40486d;
+    --background: hsl(230, 17%, 14%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+nav {
+    background-color: var(--top);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.inner-nav {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 4rem 0 15.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: var(--boldText);
+}
+
+.nav-content h1 {
+    font-size: 22px;
+    margin-bottom: 1rem;
+}
+
+.nav-content span,
+.button span {
+    color: #84899f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+}
+
+.changer {
+    width: 5rem;
+    height: 2.55rem;
+    border-radius: 1.4rem;
+    background: hsl(230, 22%, 74%);
+    margin-left: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.6s ease-in;
+}
+
+.circle {
+    height: 2rem;
+    width: 40%;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition-property: left, right;
+    transition-duration: 5s;
+    transition-timing-function: ease-out;
+}
+
+.changer.active .circle {
+    right: 2px;
+    left: unset;
+}
+
+.changer.active {
+    background: var(--togglegradient);
+}
+
+.upper-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    margin-top: 14rem;
+    column-gap: 30px;
+    margin-bottom: 5rem;
+}
+
+.upper-box {
+    padding: 3rem 6rem;
+    background-color: var(--cardBG);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.5s ease-out;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.name {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.number,
+.number-insta {
+    font-size: 6rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--boldText);
+}
+
+.followers {
+    font-weight: 500;
+    color: var(--gray);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.teller {
+    font-size: 14px;
+    color: var(--LimeGreen);
+    font-weight: 600;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.teller img {
+    margin-right: 5px;
+    height: 7px;
+}
+
+.fb {
+    border-top: 5px solid var(--Facebook);
+}
+
+.twitter {
+    border-top: 5px solid var(--Twitter);
+}
+
+.instagram {
+    border-top: 5px solid;
+    border-image-source: linear-gradient( 90deg, #fdc468 0%, #df4996 100%);
+    border-image-slice: 1;
+}
+
+.youtube {
+    border-top: 5px solid var(--YouTube);
+}
+
+.youtube .teller {
+    color: var(--YouTube);
+}
+
+.spacer {
+    font-size: 22px;
+    color: var(--text);
+    font-weight: 700;
+    margin: 3rem 0;
+}
+
+.lower-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem;
+    row-gap: 2.5rem;
+}
+
+.lower-box {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cardBG);
+    border-radius: 5px;
+    color: var(--boldText);
+    cursor: pointer;
+    transition: background-color 0.5s ease-out;
+}
+
+.part1 {
+    display: flex;
+    color: var(--text);
+    font-size: 14px;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.part1 img {
+    height: 20px;
+}
+
+.part2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    align-items: flex-end;
+}
+
+.lower-teller {
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    font-weight: 700;
+    color: var(--LimeGreen);
+}
+
+.lower-teller img {
+    height: 7px;
+    margin-right: 5px;
+}
+
+.lower-teller.red {
+    color: var(--YouTube);
+}
+
+.upper-box:hover,
+.lower-box:hover {
+    background-color: var(--hover);
+}
+
+@media (max-width:1200px) {
+    .upper-boxes {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3rem;
+    }
+}
+
+@media (max-width:900px) {
+    .upper-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .lower-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:600px) {
+    .upper-boxes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .inner-nav {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4rem 0 10.5rem 0;
+    }
+    nav {
+        border-radius: 0 0 2.5rem 2.5rem;
+    }
+    hr {
+        display: block;
+        margin: 1rem 0;
+        height: 1px;
+        background-color: #000;
+    }
+    .nav-content {
+        width: 100%;
+    }
+    .button {
+        width: 100%;
+        margin: 1rem 0;
+        justify-content: space-between;
+    }
+    .upper-boxes {
+        margin-top: 18rem;
+    }
+}
+
+@media (max-width:500px) {
+    .lower-boxes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
